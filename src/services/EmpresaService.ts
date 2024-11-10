@@ -1,5 +1,5 @@
-import { Empresa } from "../../entities/EmpresaEntity";
-import { empresaRepository } from "../../repositories/empresa/EmpresaRepository";
+import { Empresa } from "../entities/EmpresaEntity";
+import { empresaRepository } from "../repositories/EmpresaRepository";
 
 export class EmpresaService {
     async create(dadosEmpresa: Empresa): Promise<Empresa> {

@@ -2,7 +2,7 @@ import "reflect-metadata";
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import AppDataSource from "./infra/orm.config";
-import router from "./routes/empresa/EmpresaRoutes"
+import router from "./routes/EmpresaRoutes"
 
 dotenv.config();
 
