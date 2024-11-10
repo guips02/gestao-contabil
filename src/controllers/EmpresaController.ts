@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { EmpresaService } from "../../services/empresa/EmpresaService";
+import { EmpresaService } from "../services/empresa/EmpresaService";
 
 
 export class EmpresaController {

@@ -1,4 +1,4 @@
-import { Empresa } from "../../entities/empresa/EmpresaEntity";
+import { Empresa } from "../../entities/EmpresaEntity";
 import { empresaRepository } from "../../repositories/empresa/EmpresaRepository";
 
 export class EmpresaService {

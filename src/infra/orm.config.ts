@@ -1,8 +1,8 @@
 import { DataSource } from "typeorm";
 import dotenv from "dotenv";
-import { Empresa } from "../entities/empresa/EmpresaEntity";
-import { PlanoContabil } from "../entities/planoContabil/PlanoContabilEntity";
-import { ContaContabil } from "../entities/contaContabil/ContaContabilEntity";
+import { Empresa } from "../entities/EmpresaEntity";
+import { PlanoContabil } from "../entities/PlanoContabilEntity";
+import { ContaContabil } from "../entities/ContaContabilEntity";
 
 dotenv.config();
 

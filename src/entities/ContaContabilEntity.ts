@@ -1,5 +1,5 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { PlanoContabil } from "../planoContabil/PlanoContabilEntity";
+import { PlanoContabil } from "./PlanoContabilEntity";
 import { NaturezaEnum } from "./enums/NaturezaEnum";
 import { TipoEnum } from "./enums/TipoEnum";
 
