@@ -1,7 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { ContaContabil } from "../contaContabil/conta.contabil.entity";
-import { PlanoReferencialEnum } from "./enums/plano.referencial.enum";
-import { Empresa } from "../empresa/empresa.entity";
+import { ContaContabil } from "../contaContabil/ContaContabilEntity";
+import { PlanoReferencialEnum } from "./enums/PlanoReferencialEnum";
+import { Empresa } from "../empresa/EmpresaEntity";
 
 @Entity("tb_plano_contabil")
 export class PlanoContabil {

@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { PlanoContabil } from "../planoContabil/plano.contabil.entity";
-import { NaturezaEnum } from "./enums/natureza.enum";
-import { TipoEnum } from "./enums/tipo.enum";
+import { PlanoContabil } from "../planoContabil/PlanoContabilEntity";
+import { NaturezaEnum } from "./enums/NaturezaEnum";
+import { TipoEnum } from "./enums/TipoEnum";
 
 @Entity("tb_conta_contabil")
 export class ContaContabil {

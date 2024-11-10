@@ -1,6 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { RegimeTributarioEnum } from "./enums/regime.tributario.enum";
-import { PlanoContabil } from "../planoContabil/plano.contabil.entity";
+import { RegimeTributarioEnum } from "./enums/RegimeTributarioEnum";
+import { PlanoContabil } from "../planoContabil/PlanoContabilEntity";
 
 @Entity("tb_empresa")
 export class Empresa {
