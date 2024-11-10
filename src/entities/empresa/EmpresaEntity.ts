@@ -22,7 +22,7 @@ export class Empresa {
     @Column()
     endereco: string;
 
-    @ManyToOne(() => PlanoContabil, (planoContabil) => planoContabil.empresas)
+    @ManyToOne(() => PlanoContabil, (planoContabil) => planoContabil.empresas, { nullable: true })
     @JoinColumn({ name: "planoContabilId" })
-    planoContabil: PlanoContabil;
+    planoContabil?: PlanoContabil;
 }

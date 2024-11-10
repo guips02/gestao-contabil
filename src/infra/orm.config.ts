@@ -1,5 +1,8 @@
 import { DataSource } from "typeorm";
 import dotenv from "dotenv";
+import { Empresa } from "../entities/empresa/EmpresaEntity";
+import { PlanoContabil } from "../entities/planoContabil/PlanoContabilEntity";
+import { ContaContabil } from "../entities/contaContabil/ContaContabilEntity";
 
 dotenv.config();
 
@@ -12,7 +15,7 @@ const AppDataSource = new DataSource({
     database: process.env.POSTGRES_DB,
     synchronize: true,
     logging: false,
-    entities: ["src/entities/**/*.entity.ts"],
+    entities: [Empresa, PlanoContabil, ContaContabil],
     migrations: ["src/migration/**/*.ts"],
     subscribers: ["src/subscriber/**/*.ts"]
 });

@@ -1,19 +1,19 @@
 import "reflect-metadata";
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-import dataSource from "./infra/orm.config";
+import AppDataSource from "./infra/orm.config";
+import router from "./routes/empresa/EmpresaRoutes"
 
 dotenv.config();
 
 const app: Express = express();
 const porta = process.env.PORT || 3000;
 
+app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("Servidor Express + TypeScript");
-});
+app.use("/api", router);
 
-dataSource.initialize()
+AppDataSource.initialize()
     .then(() => {
         console.log("Conectado ao banco de dados");
 
