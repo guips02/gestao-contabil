@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { PlanoContabil } from "../planoContabil/plano.contabil.entity";
 import { NaturezaEnum } from "./enums/natureza.enum";
 import { TipoEnum } from "./enums/tipo.enum";
@@ -32,6 +32,7 @@ export class ContaContabil {
     @Column({ nullable: true })
     classificacaoReferencial?: string;
 
-    @ManyToOne(() => PlanoContabil, planoContabil => planoContabil.contas)
+    @ManyToOne(() => PlanoContabil, (planoContabil) => planoContabil.contas)
+    @JoinColumn({ name: "planoContabilId" })
     planoContabil: PlanoContabil;
 }

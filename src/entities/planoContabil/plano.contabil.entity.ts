@@ -1,6 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { ContaContabil } from "../contaContabil/conta.contabil.entity";
 import { PlanoReferencialEnum } from "./enums/plano.referencial.enum";
+import { Empresa } from "../empresa/empresa.entity";
 
 @Entity("tb_plano_contabil")
 export class PlanoContabil {
@@ -43,4 +44,7 @@ export class PlanoContabil {
 
     @OneToMany(() => ContaContabil, contaContabil => contaContabil.planoContabil)
     contas: ContaContabil[];
+
+    @OneToMany(() => Empresa, (empresa) => empresa.planoContabil)
+    empresas: Empresa[];
 }
