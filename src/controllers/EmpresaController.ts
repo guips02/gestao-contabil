@@ -18,6 +18,15 @@ export class EmpresaController {
             return res.status(400).json({ message: error.message });
         }
     }
+
+    async buscarTodasEmpresas(req: Request, res: Response) {
+        try {
+            const empresas = await this.empresaService.findAll();
+            return res.status(200).json(empresas);
+        } catch (error: any) {
+            return res.status(400).json({ message: error.message });
+        }
+    }
 }
 
 export default new EmpresaController();

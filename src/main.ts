@@ -2,7 +2,7 @@ import "reflect-metadata";
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import AppDataSource from "./infra/orm.config";
-import router from "./routes/EmpresaRoutes"
+import empresaRouter from "./routes/EmpresaRoutes"
 
 dotenv.config();
 
@@ -11,7 +11,7 @@ const porta = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.use("/api", router);
+app.use("/api", empresaRouter);
 
 AppDataSource.initialize()
     .then(() => {

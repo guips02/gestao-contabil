@@ -15,4 +15,8 @@ export class EmpresaService {
 
         return await empresaRepository.save(novaEmpresa);
     }
+
+    async findAll(): Promise<Empresa[]> {
+        return await empresaRepository.find();
+    }
 }

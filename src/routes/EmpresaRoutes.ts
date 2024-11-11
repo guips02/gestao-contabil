@@ -7,4 +7,8 @@ router.post('/empresas', (req, res) => {
     EmpresaController.criarEmpresa(req, res);
 });
 
+router.get('/empresas', (req, res) => {
+    EmpresaController.buscarTodasEmpresas(req, res);
+})
+
 export default router;
