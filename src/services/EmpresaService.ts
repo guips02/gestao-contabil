@@ -19,4 +19,18 @@ export class EmpresaService {
     async findAll(): Promise<Empresa[]> {
         return await empresaRepository.find();
     }
+
+    async findById(id: number): Promise<Empresa | null> {
+        return await empresaRepository.findOneBy({ id });
+    }
+
+    async delete(id: number): Promise<string> {
+        const empresa = await empresaRepository.findOneBy({ id });
+
+        if (!empresa) {
+            throw new Error("Empresa não encontrada no banco de dados");
+        }
+        await empresaRepository.delete({ id });
+        return "Empresa removida com sucesso";
+    }
 }

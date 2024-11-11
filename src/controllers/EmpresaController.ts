@@ -27,6 +27,29 @@ export class EmpresaController {
             return res.status(400).json({ message: error.message });
         }
     }
+
+    async buscaEmpresaPorId(req: Request, res: Response) {
+        const { id } = req.params;
+        try {
+            const empresa = await this.empresaService.findById(parseInt(id));
+            if (!empresa) {
+                return res.status(404).json({ message: "Empresa não encontrada no banco de dados." });
+            }
+            return res.status(200).json(empresa);
+        } catch (error: any) {
+            return res.status(400).json({ message: error.message })
+        }
+    }
+
+    async deletarEmpresa(req: Request, res: Response): Promise<Response> {
+        try {
+            const { id } = req.params;
+            const message = await this.empresaService.delete(Number(id));
+            return res.status(200).json({ message });
+        } catch (error: any) {
+            return res.status(400).json({ message: error.message });
+        }
+    }
 }
 
 export default new EmpresaController();

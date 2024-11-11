@@ -11,4 +11,12 @@ router.get('/empresas', (req, res) => {
     EmpresaController.buscarTodasEmpresas(req, res);
 })
 
+router.get('/empresas/:id', (req, res) => {
+    EmpresaController.buscaEmpresaPorId(req, res);
+})
+
+router.delete('/empresas/:id', (req, res) => {
+    EmpresaController.deletarEmpresa(req, res);
+})
+
 export default router;
